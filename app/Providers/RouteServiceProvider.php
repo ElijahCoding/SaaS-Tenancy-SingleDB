@@ -70,4 +70,16 @@ class RouteServiceProvider extends ServiceProvider
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
     }
+
+    // /**
+    //  * Map tenant routes.
+    //  *
+    //  * @return [type] [description]
+    //  */
+    // protected function mapTenantRoutes()
+    // {
+    //     Route::middleware('web')
+    //          ->namespace("{$this->namespace}\Tenant")
+    //          ->group(base_path('routes/tenant.php'));
+    // }
 }
