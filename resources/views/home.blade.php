@@ -8,7 +8,13 @@
                 <div class="panel-heading">Companies</div>
 
                 <div class="panel-body">
-                    
+                    <div class="list-group">
+                        @foreach ($companies as $company)
+                            <a href="/{{ $company->id }}" class="list-group-item">
+                                {{ $company->name }}
+                            </a>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
