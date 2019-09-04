@@ -4,4 +4,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/{company}', 'Tenant\DashboardController@index');
+
+Route::group(['middleware' => ['tenant']], function () {
+    Route::get('/projects', 'Tenant\ProjectController@index');
+    Route::get('/{company}', 'Tenant\DashboardController@index');
+});
