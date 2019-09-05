@@ -17,6 +17,14 @@
                     </div>
                 </div>
             </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">New Project</div>
+
+                <div class="panel-body">
+                    @include('tenant.projects.partials._create')
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -4,6 +4,7 @@ namespace App\Tenant\Traits;
 
 use App\Tenant\Scopes\TenantScope;
 use App\Tenant\Manager;
+use App\Tenant\Observers\TenantObserver;
 
 trait ForTenants
 {
@@ -15,6 +16,10 @@ trait ForTenants
 
         static::addGlobalScope(
             new TenantScope($manager->getTenant())
+        );
+
+        static::observe(
+            app(TenantObserver::class)
         );
     }
 }
