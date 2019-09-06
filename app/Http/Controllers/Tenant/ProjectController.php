@@ -21,4 +21,9 @@ class ProjectController extends Controller
     {
         return view('tenant.projects.show', compact('project'));
     }
+
+    public function update(Project $project)
+    {
+
+    }
 }

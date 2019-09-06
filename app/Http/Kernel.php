@@ -34,12 +34,11 @@ class Kernel extends HttpKernel
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
-            \App\Http\Middleware\Tenant\Tenant::class,
-            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            // \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
         'tenant' => [
-            // \App\Http\Middleware\Tenant\Tenant::class,
+            \App\Http\Middleware\Tenant\Tenant::class,
         ],
 
         'api' => [
