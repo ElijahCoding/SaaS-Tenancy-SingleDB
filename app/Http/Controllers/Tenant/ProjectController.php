@@ -13,5 +13,12 @@ class ProjectController extends Controller
         Project::create([
             'name' => $request->name
         ]);
+
+        return back();
+    }
+
+    public function show(Project $project)
+    {
+        return view('tenant.projects.show', compact('project'));
     }
 }

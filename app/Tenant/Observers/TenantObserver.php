@@ -6,18 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class TenantObserver
 {
+    protected $tenant;
 
-    public function __construct()
+    public function __construct(Model $tenant)
     {
-        
+        $this->tenant = $tenant;
     }
 
     public function creating(Model $model)
     {
-        $foreignKey = $this->getForeignKey();
+        $foreignKey = $this->tenant->getForeignKey();
 
-        if (!isset($model->company_id)) {
-            // code...
+        if (!isset($model->{$foreignKey})) {
+            $model->setAttribute($foreignKey, $this->tenant->id);
         }
     }
 }
